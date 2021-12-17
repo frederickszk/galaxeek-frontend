@@ -6,4 +6,10 @@ export default defineConfig({
   },
   routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
+  layout: {
+    name: 'GalaXeek',
+  },
+  antd: {
+    dark: true,
+  },
 });
