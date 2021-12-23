@@ -9,11 +9,9 @@ export default function IndexPage() {
   return (
     <div>
       <h1 className={styles.title}>Page index</h1>
-      <Button type="primary" onClick={() => setInitialState(50)}>
-        Button
-      </Button>
+      <Button type="primary">Button</Button>
       <br></br>
-      {initialState}
+      Yetaiga
     </div>
   );
 }
