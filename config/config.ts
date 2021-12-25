@@ -9,7 +9,7 @@ export default defineConfig({
   },
   routes: [
     { path: '/', component: '@/pages/index' },
-    { path: '/login', component: '@/pages/Login' },
+    { path: '/login', component: '@/pages/Login', layout: false },
   ],
   fastRefresh: {},
   layout: {
@@ -40,7 +40,7 @@ export default defineConfig({
         'https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json',
       // schemaPath: join(__dirname, 'oneapi.json'),
       projectName: 'antd-pro',
-      mock: false,
+      mock: true,
     },
     // {
     //   requestLibPath: "import { request } from 'umi'",
