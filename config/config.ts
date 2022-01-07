@@ -1,5 +1,6 @@
 import { defineConfig } from 'umi';
 import { join } from 'path';
+import routes from './routes';
 
 // const { REACT_APP_ENV } = process.env;
 
@@ -7,10 +8,10 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [
-    { path: '/', component: '@/pages/index' },
-    { path: '/login', component: '@/pages/Login', layout: false },
-  ],
+  dva: {
+    hmr: true,
+  },
+  routes,
   fastRefresh: {},
   layout: {
     name: 'GalaXeek',
