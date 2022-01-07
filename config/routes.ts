@@ -1,9 +1,15 @@
 export default [
   {
-    path: '/welcome',
-    component: '@/pages/index',
-    icon: 'crown',
     name: '我的设备',
+    icon: 'mobile',
+    path: '/devices',
+    component: './Devices',
+  },
+  {
+    name: '定位',
+    icon: 'global',
+    path: '/map',
+    component: './Map',
   },
   {
     path: '/login',
@@ -12,11 +18,6 @@ export default [
   },
   {
     path: '/',
-    redirect: '/welcome',
-  },
-  {
-    name: '卡片列表',
-    path: '/devices',
-    component: './Devices',
+    redirect: '/devices',
   },
 ];
