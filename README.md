@@ -42,7 +42,9 @@ import "leaflet/dist/leaflet.css"
 
 - 动态调整地图高度
 
-页面挂载及变化时用`document.getElementById()`直接调整`<div>`的高度。注意为了避免`null`报错可使用下述断言操作符`!`：
+由于Leaflet地图引入的特性，必须先放置一个有命名（如`map`）的块，然后才能用JS代码进行地图图层加载等操作，因此需要在React的生命周期函数中进行初始化等一系列处理。因此state中的map变量存在为空值的可能性，增加了代码处理的复杂度。
+
+为实现地图高度动态调整（宽度默认100%），页面挂载及变化时用`document.getElementById()`直接调整`<div>`的高度。注意为了避免`null`报错可使用下述断言操作符`!`：
 ```Typescript
 document.getElementById('test')!.xxx.xxx
 ```
