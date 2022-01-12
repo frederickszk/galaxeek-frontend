@@ -28,4 +28,12 @@ export type CardListItemDataType = {
   members: Member[];
 };
 
+export type Device = {
+  id: number;
+  user_id: number;
+  device_id_iot: string;
+  name: string;
+  type: string;
+};
+
 declare module 'express';

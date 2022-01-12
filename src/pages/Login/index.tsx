@@ -53,8 +53,11 @@ const Login: React.FC = () => {
 
   const handleSubmit = async (values: API.LoginParams) => {
     try {
+      console.log(values);
       // 登录
+      // const msg = await login({ ...values, type }, {"mode": 'no-cors'});
       const msg = await login({ ...values, type });
+      console.log(msg);
       if (msg.status === 'ok') {
         const defaultLoginSuccessMessage = intl.formatMessage({
           id: 'pages.login.success',
@@ -148,7 +151,8 @@ const Login: React.FC = () => {
           {type === 'account' && (
             <>
               <ProFormText
-                name="username"
+                // name="username"
+                name="user"
                 fieldProps={{
                   size: 'large',
                   prefix: <UserOutlined className={styles.prefixIcon} />,

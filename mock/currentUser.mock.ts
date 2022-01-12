@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 export default {
   'GET /api/currentUser': (req: Request, res: Response) => {
     res.status(200).send({
-      name: '龙娟',
+      name: '孙泽堃',
       avatar:
         'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
       userid: 'd8cB4DdA-f3bF-7d9c-B6f8-AB42F5F4ee82',

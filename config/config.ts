@@ -1,6 +1,7 @@
 import { defineConfig } from 'umi';
 import { join } from 'path';
 import routes from './routes';
+import defaultSettings from './defaultSettings';
 
 // const { REACT_APP_ENV } = process.env;
 
@@ -15,6 +16,7 @@ export default defineConfig({
   fastRefresh: {},
   layout: {
     name: 'GalaXeek',
+    ...defaultSettings,
   },
   antd: {
     dark: true,
