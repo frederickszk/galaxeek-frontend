@@ -94,9 +94,12 @@ const Login: React.FC = () => {
         <LoginForm
           logo={<img alt="logo" src="/logo.svg" />}
           title="GalaXeek"
-          subTitle={intl.formatMessage({
-            id: 'pages.layouts.userLayout.title',
-          })}
+          subTitle={
+            // intl.formatMessage({
+            //   id: 'pages.layouts.userLayout.title',
+            // })
+            'Seek Your Own Galaxy.'
+          }
           initialValues={{
             autoLogin: true,
           }}
@@ -157,10 +160,13 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={intl.formatMessage({
-                  id: 'pages.login.username.placeholder',
-                  defaultMessage: '用户名: admin or user',
-                })}
+                placeholder={
+                  // intl.formatMessage({
+                  // id: 'pages.login.username.placeholder',
+                  // defaultMessage: '用户名',
+                  // })
+                  '用户名'
+                }
                 rules={[
                   {
                     required: true,
@@ -179,10 +185,13 @@ const Login: React.FC = () => {
                   size: 'large',
                   prefix: <LockOutlined className={styles.prefixIcon} />,
                 }}
-                placeholder={intl.formatMessage({
-                  id: 'pages.login.password.placeholder',
-                  defaultMessage: '密码: ant.design',
-                })}
+                placeholder={
+                  // intl.formatMessage({
+                  // id: 'pages.login.password.placeholder',
+                  // defaultMessage: '密码',
+                  // })
+                  '密码'
+                }
                 rules={[
                   {
                     required: true,

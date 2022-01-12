@@ -50,3 +50,7 @@ import "leaflet/dist/leaflet.css"
 document.getElementById('test')!.xxx.xxx
 ```
 > 参考教程：[Blog1](https://blog.csdn.net/weixin_30645617/article/details/96842586), [Blog2](https://blog.csdn.net/m0_37697423/article/details/106100922)
+
+- Marker图标显示不正常
+
+网络访问的问题。参考[此处](https://blog.csdn.net/wu_xiao_qing/article/details/78594741)手动设置marker图标。并解决偏移
