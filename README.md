@@ -1,4 +1,5 @@
-# umi project
+# galaxeek-frontend
+The final project of CS7314 (IoT Theory and Technology). The frontend implemented by React + umi.js + ant-design-pro framework.
 
 ## Getting Started
 
