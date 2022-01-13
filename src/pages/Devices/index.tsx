@@ -5,8 +5,14 @@ import { useRequest } from 'umi';
 import { queryFakeList, queryDeviceByUser } from './service';
 import type { CardListItemDataType, Device } from './data.d';
 import styles from './style.less';
-
 const { Paragraph } = Typography;
+import { history } from 'umi';
+
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
 
 const Devices = () => {
   const { data, loading } = useRequest(
@@ -117,8 +123,21 @@ const Devices = () => {
                     hoverable
                     className={styles.card}
                     actions={[
-                      <a key="option1">地图定位</a>,
-                      <a key="option2">辅助寻找</a>,
+                      // <a key="option1">地图定位</a>,
+                      // <a key="option2">辅助寻找</a>,
+                      <SettingOutlined
+                        key="setting"
+                        onClick={() => {
+                          history.push({
+                            pathname: '/map',
+                            query: { device_id: item.id! },
+                          });
+                        }}
+                      />,
+                      <EditOutlined key="edit" />,
+                      <EllipsisOutlined key="ellipsis" />,
+                      // <Button size='large'>地图定位</Button>,
+                      // <Button size='large'>辅助寻找</Button>,
                     ]}
                   >
                     {device_type === 'Android' && (
