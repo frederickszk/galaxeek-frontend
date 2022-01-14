@@ -1,8 +1,8 @@
-import { PlusOutlined } from '@ant-design/icons';
+import { GlobalOutlined, PlusOutlined } from '@ant-design/icons';
 import { Button, Card, List, Typography } from 'antd';
 import { PageContainer } from '@ant-design/pro-layout';
 import { useRequest } from 'umi';
-import { queryFakeList, queryDeviceByUser } from './service';
+import { queryFakeList, queryDeviceByUser, controlDeviceById } from './service';
 import type { CardListItemDataType, Device } from './data.d';
 import styles from './style.less';
 const { Paragraph } = Typography;
@@ -12,19 +12,25 @@ import {
   EditOutlined,
   EllipsisOutlined,
   SettingOutlined,
+  CompassOutlined,
+  AlertOutlined,
 } from '@ant-design/icons';
 
 const Devices = () => {
   const { data, loading } = useRequest(
     () => {
       return queryDeviceByUser({
-        user_id: 2,
+        user_id: 12,
       });
     },
     {
       formatResult: (res) => res,
     },
   );
+
+  const controlDevice = async (id: number) => {
+    const msg = await controlDeviceById({ device_id: id });
+  };
 
   //   const { data, loading } = useRequest(() => {
   //     return queryFakeList({
@@ -43,7 +49,7 @@ const Devices = () => {
     const card_list: Partial<CardListItemDataType>[] = [];
     for (let i = 0; i < device_list.length; i += 1) {
       card_list.push({
-        id: `device-${device_list[i].id}`,
+        id: `${device_list[i].id}`,
         title: device_list[i].name,
         description: device_list[i].type,
         avatar:
@@ -125,8 +131,8 @@ const Devices = () => {
                     actions={[
                       // <a key="option1">地图定位</a>,
                       // <a key="option2">辅助寻找</a>,
-                      <SettingOutlined
-                        key="setting"
+                      <GlobalOutlined
+                        key="global"
                         onClick={() => {
                           history.push({
                             pathname: '/map',
@@ -134,8 +140,12 @@ const Devices = () => {
                           });
                         }}
                       />,
-                      <EditOutlined key="edit" />,
-                      <EllipsisOutlined key="ellipsis" />,
+                      <AlertOutlined
+                        key="locate"
+                        onClick={() => {
+                          controlDevice(Number(item.id!));
+                        }}
+                      />,
                       // <Button size='large'>地图定位</Button>,
                       // <Button size='large'>辅助寻找</Button>,
                     ]}

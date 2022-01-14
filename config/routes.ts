@@ -18,6 +18,6 @@ export default [
   },
   {
     path: '/',
-    redirect: '/devices',
+    redirect: '/login',
   },
 ];

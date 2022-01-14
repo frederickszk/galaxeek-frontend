@@ -17,3 +17,10 @@ export async function queryDeviceByUser(params: {
     params,
   });
 }
+
+export async function controlDeviceById(params: { device_id: number }) {
+  return request('http://1.116.159.212:19192/api/iot/action', {
+    method: 'GET',
+    params,
+  });
+}

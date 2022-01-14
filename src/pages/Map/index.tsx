@@ -14,6 +14,8 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
+import { history } from 'umi';
+
 let DefaultIcon = L.icon({
   iconUrl: markerIcon,
   iconRetinaUrl: markerIcon2x,
@@ -132,7 +134,9 @@ export default () => {
     const { data, loading } = useRequest(
       () => {
         return queryPositionByDevice({
-          device_id: 19,
+          // device_id: 38,
+
+          device_id: Number(history.location.query!['device_id']!),
           history: false,
         });
       },
@@ -176,7 +180,8 @@ export default () => {
     const { data, loading } = useRequest(
       () => {
         return queryPositionByDevice({
-          device_id: 19,
+          // device_id: 38,
+          device_id: Number(history.location.query!['device_id']!),
           history: true,
         });
       },
@@ -194,7 +199,7 @@ export default () => {
   }
 
   const { data, loading } = pos();
-  console.log('data:', data);
+  // console.log('data:', data);
   track();
 
   // var popup = L.popup()
